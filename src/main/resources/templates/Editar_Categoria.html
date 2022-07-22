@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+	integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+	crossorigin="anonymous">
+<head>
+<meta charset="utf-8">
+<title>Editar Cat</title>
+</head>
+<body>
+
+	<div class="container">
+	<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+		<a class="navbar-brand" href=#>Categorias</a>
+		<div class="collapse navbar-collapse" id="collapsibleNavbar">
+			<ul class="navbar-nav">
+				<li class="nav-iem"><a class="nav-link" th:href="@{/categoria}">Productos</a></li>
+						<li class="nav-iem"><a class="nav-link" th:href="@{/categoria}">Facturas</a></li>
+			</ul>
+		</div>
+	</nav>
+	</div>
+	<br> 
+	<div class="container">
+		<div class="row">
+		<div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+			<h1 class="text-center">EDITAR CATEGORIA</h1>
+			<div class="card-body">
+			<form th:action="@{/categoria/{id}(id=${categoria.id})}" th:object="${categoria}" method="POST" > 
+				<div class="form-group">
+				<label>Categoría :</label>
+				<input type="text" name="categoria" th:field="*{categoria}" class="form-control" placeholder="Digite la categoría " required />
+				</div>
+				<br>
+				<div class="form-group">
+				<label>Descripción :</label>
+				<input type="text" name="descripcion" th:field="*{descripcion}" class="form-control" placeholder="Digite la descripcion " required />
+				</div>
+				<div class="box-footer">
+				<button class="btn btn-success">Guardar</button>
+				</div>
+				
+			</form>
+			</div>
+		</div>
+		</div>
+	</div>
+	
+	
+
+</body>
+</html>
